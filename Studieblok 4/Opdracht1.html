@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+    {{ firstName + " " + lastName }}
+</div>
+
+<div id="secondApp" ng-app="mySecondApp" ng-controller="mySecondCtrl">
+    {{ secondFirstName + " " + secondLastName }}
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+    });
+
+    var app2 = angular.module("mySecondApp", []);
+    app2.controller("mySecondCtrl", function($scope) {
+        $scope.secondFirstName = "Robin";
+        $scope.secondLastName = "Brokmann";
+    });
+
+    //Dit was de manier die Rick mij vertelde om 2 ng-apps op dezelfde pagina te laden.
+    //Angular stopt met het automatisch detecteren wanneer het de eerste app heeft gevonden.
+    angular.bootstrap(document.getElementById("secondApp"), ['mySecondApp']);
+</script>
+</body>
+</html>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+</head>
 <body>
 
 <div ng-app="" ng-init="autoArray=[
@@ -10,13 +13,26 @@ bmw={kenteken: 'ar-45-ba', kleur: 'Grijs', merk: 'BMW', aantaldeuren: 2},
 opel={kenteken: 'iz-49-nw', kleur: 'Groen', merk: 'Opel', aantaldeuren: 6},
 nissan={kenteken: 'ka-985-i', kleur: 'Zwart', merk: 'Nissan', aantaldeuren: 2}]">
 
-    <div ng-repeat="(key, value) in autoArray">
-        <h2>Auto {{key + 1}}</h2>
-        Kenteken: {{value.kenteken}}<br>
-        Kleur: {{value.kleur}}<br>
-        Merk: {{value.merk}}<br>
-        Aantal Deuren: {{value.aantaldeuren}}
-    </div>
+
+    <table>
+        <tr>
+            <th>Merk</th>
+            <th>Kleur</th>
+            <th>Kenteken</th>
+            <th>Deuren</th>
+        </tr>
+        <tr ng-repeat="auto in autoArray">
+            <td>{{ auto.merk }}</td>
+            <td>{{ auto.kleur }}</td>
+            <td>{{ auto.kenteken }}</td>
+            <td>{{ auto.aantaldeuren }}</td>
+        </tr>
+    </table>
 </div>
 </body>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
 </html>
