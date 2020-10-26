@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Inleveropdracht A</title>
+    <meta name="author" content="Rick Vinke - 107513">
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+<form ng-app="myApp" name="myForm" ng-controller="validateCtrl">
+    <p>Voornaam:<br>
+        <input type="text" name="voornaam" ng-model="voornaam" required tekst-directive>
+        <span style="color:red" ng-show="myForm.voornaam.$dirty">
+             <span ng-show="myForm.voornaam.$error.regex && !myForm.voornaam.$error.required">Ongelige voornaam.</span>
+            <span ng-show="myForm.voornaam.$error.required">De voornaam kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+    <p>Achternaam:<br>
+        <input type="text" name="achernaam" ng-model="achternaam" required tekst-directive>
+        <span style="color:red" ng-show="myForm.achernaam.$dirty">
+             <span ng-show="myForm.achernaam.$error.regex && !myForm.achernaam.$error.required">Ongelige achernaam.</span>
+            <span ng-show="myForm.achernaam.$error.required">De achternaam kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+    <!-- Geen check voor cijfer in Adres/Straat namen omdat er in de wereld misschien straten zijn die dit wel hebben. -->
+    <p>Adres:<br>
+        <input type="text" name="adres" ng-model="adres" required>
+        <span style="color:red" ng-show="myForm.adres.$dirty">
+            <span ng-show="myForm.adres.$error.required">Adres is verplicht!</span>
+        </span>
+    </p>
+
+    <p>Huisnummer:<br>
+        <input type="number" min="1" max="999" name="huisnummer" ng-model="huisnummer" required huisnummer-directive="">
+        <span style="color:red" ng-show="myForm.huisnummer.$dirty">
+            <span ng-show="myForm.huisnummer.$error.numberRange && !myForm.huisnummer.$error.required">Het huisnummer moet tussen de 1 en 999 zijn</span>
+            <span ng-show="myForm.huisnummer.$error.required">Het huisnummer kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+    <p>Postcode: <span style="font-style: italic">Voorbeeld: 1234 AB</span><br>
+        <input type="text" name="postcode" ng-model="postcode" required postcode-directive>
+        <span style="color:red" ng-show="myForm.postcode.$dirty">
+            <span ng-show="myForm.postcode.$error.regex && !myForm.postcode.$error.required">Ongelige postcode.</span>
+            <span ng-show="myForm.postcode.$error.required">De postcode kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+    <p>Woonplaats:<br>
+        <input type="text" name="woonplaats" ng-model="woonplaats" required tekst-directive>
+        <span style="color:red" ng-show="myForm.woonplaats.$dirty">
+             <span ng-show="myForm.woonplaats.$error.regex && !myForm.woonplaats.$error.required">Ongelige woonplaats.</span>
+            <span ng-show="myForm.woonplaats.$error.required">De woonplaats kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+    <p>Email:<br>
+        <input type="text" name="email" ng-model="email" required email-directive>
+        <span style="color:red" ng-show="myForm.email.$dirty">
+             <span ng-show="myForm.email.$error.regex && !myForm.email.$error.required">Ongelig email adres.</span>
+            <span ng-show="myForm.email.$error.required">Het email adres kan niet leeg zijn.</span>
+        </span>
+    </p>
+
+</form>
+</body>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</html>
