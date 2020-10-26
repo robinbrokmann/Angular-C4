@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <select ng-model="selectedKleur" ng-options="x.kleur for x in fruit"></select>
+    <h2>Fruitlijst:</h2><br>
+    <!-- Loop (repeat) door de array met fruit soorten van de geselecteerde kleur. -->
+    <div ng-repeat="y in selectedKleur.fruitSoorten">
+        {{y | capitalize}}
+    </div>
+</div>
+</body>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</html>
