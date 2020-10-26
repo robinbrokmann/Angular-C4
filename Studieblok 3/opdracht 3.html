@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="breedte=50; hoogte=50">
+    <p>Breedte: <input value="50" type="number" ng-model="breedte"></p>
+    <p>Hoogte: <input value="50" type="number" ng-model="hoogte"></p>
+
+    <div style="background-color: black; height: {{hoogte}}px; width:{{breedte}}px"></div>
+
+</div>
+</body>
+</html>

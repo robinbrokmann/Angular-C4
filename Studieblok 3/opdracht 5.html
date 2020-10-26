@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="autoArray=[
+honda={kenteken: 'sc-ri-pt', kleur: 'rood', merk: 'Honda', aantaldeuren: 4},
+subaru={kenteken: 'ab-cd-ef', kleur: 'blauw', merk: 'Subaru', aantaldeuren: 4},
+bmw={kenteken: 'ar-er-ba', kleur: 'grijs', merk: 'BMW', aantaldeuren: 2},
+opel={kenteken: 'iz-lq-nw', kleur: 'groen', merk: 'Opel', aantaldeuren: 6},
+nissan={kenteken: 'ka-rn-xi', kleur: 'zwart', merk: 'Nissan', aantaldeuren: 2}]">
+
+    <div ng-repeat="(key, value) in autoArray">
+        <h2>Auto {{key + 1}}</h2>
+        Kenteken: {{value.kenteken}}<br>
+        Kleur: {{value.kleur}}<br>
+        Merk: {{value.merk}}<br>
+        Aantal Deuren: {{value.aantaldeuren}}
+    </div>
+</div>
+</body>
+</html>
