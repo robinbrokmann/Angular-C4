@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="autoCtrl">
+    <table>
+        <tr>
+
+            <th ng-click="orderByMe('merk')">Merk</th>
+            <th ng-click="orderByMe('kleur')">Kleur</th>
+            <th ng-click="orderByMe('kenteken')">Kenteken</th>
+            <th ng-click="orderByMe('aantaldeuren')">Deuren</th>
+            <th ng-click="orderByMe('merk')">Prijs</th>
+        </tr>
+        <tr ng-repeat="auto in autoArray | orderBy:myOrderBy">
+            <td>{{ auto.merk | uppercase }}</td>
+            <td>{{ auto.kleur }}</td>
+            <td>{{ auto.kenteken }}</td>
+            <td>{{ auto.aantaldeuren }}</td>
+            <td>{{ auto.prijs | currency}} </td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</html>
