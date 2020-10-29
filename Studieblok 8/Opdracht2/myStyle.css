@@ -1,0 +1,14 @@
+.blok{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+
+.blockText{
+    position: absolute;
+    top: 40%;
+    left: 50%
+}

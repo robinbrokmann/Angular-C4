@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+
+    <div ng-style="{'background-color' : hoverColor, 'border' : '1px black solid', 'width' : '50px', 'height' : '50px', 'display' : 'inline-block'}"></div>
+
+    <span ng-show="mySwitch">Kleur: {{hoverColor}}</span><br>
+
+    <input type="checkbox" ng-model="mySwitch">Kleur in tekst<br>
+
+    <div style="margin-top: 50px">
+        <div ng-click="redClick = redClick + 1" ng-mouseenter="hoverColor = 'Rood'" ng-mouseleave="hoverColor = ''" ng-style="{'background-color' : 'red'}" class="blok">
+            <div class="blockText" ng-show="redClick > 0">{{redClick}}</div>
+        </div>
+        <div ng-click="blueClick = blueClick + 1" ng-mouseenter="hoverColor = 'Blauw'" ng-mouseleave="hoverColor = ''" ng-style="{'background-color' : 'blue'}" class="blok">
+            <div style="color: white" class="blockText" ng-show="blueClick > 0">{{blueClick}}</div>
+        </div>
+        <div ng-click="greenClick = greenClick + 1" ng-mouseenter="hoverColor = 'Groen'" ng-mouseleave="hoverColor = ''" ng-style="{'background-color' : 'green'}" class="blok">
+            <div class="blockText" ng-show="greenClick > 0">{{greenClick}}</div>
+        </div>
+    </div>
+</div>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</body>
+</html>
