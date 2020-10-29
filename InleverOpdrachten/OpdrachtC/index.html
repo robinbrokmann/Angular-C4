@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<table>
+    <tr>
+        <th>Bedrijfsnaam</th>
+        <th>Adres</th>
+        <th>Woonplaats</th>
+        <th>Telefoonnummer</th>
+    </tr>
+    <tr ng-repeat="x in names">
+        <td>{{ x.Bedrijfsnaam }}</td>
+        <td>{{ x.Adres }}</td>
+        <td>{{ x.Woonplaats }}</td>
+        <td>{{ x.Telefoonnummer }}</td>
+    </tr>
+</table>
+</div>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</body>
+</html>
