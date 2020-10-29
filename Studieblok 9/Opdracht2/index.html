@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <div style="border: 1px solid black; width: 1000px; height: 300px">
+        <a href="#!home">Home</a><br>
+        <a href="#!overmij">Over mij</a><br>
+        <a href="#!hobby">Hobby</a>
+    </div><br>
+    <div ng-view style="border: 1px solid black; width: 1000px; height: 300px"></div>
+</div>
+<script src="myApp.js"></script>
+<script src="myController.js"></script>
+</body>
+</html>
