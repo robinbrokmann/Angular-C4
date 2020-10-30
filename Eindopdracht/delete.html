@@ -1,0 +1,15 @@
+<h3>Verwijderen</h3>
+<div class="center">
+<div ng-if="currentRowId">
+    <h1>Weet je zeker dat je de gegevens van {{names[currentRowIndex].voornaam}} wil verwijderen?</h1>
+
+    <input type="button" ng-click="prepareDelete()" value="Ja"/>
+    <input type="button" ng-click="routePage('/')" value="Nee"/>
+
+</div>
+<div ng-if="!currentRowId">
+    Er is geen persoon geselecteerd.
+    <br><br><input value="Terug" type="button" ng-click="routePage('/')">
+</div>
+
+</div>

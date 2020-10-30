@@ -1,0 +1,24 @@
+<table ng-mouseleave="updateTimestamp('')" class="center">
+    <tr>
+        <th>Voornaam</th>
+        <th ng-class='{"selectedInfo":currentlySelected==1}' ng-click="$scope.currentlySelected=1; orderByMe('achternaam', 1)">Achternaam</th>
+        <th>Straat</th>
+        <th>Huisnummer</th>
+        <th>Postcode</th>
+        <th ng-class='{"selectedInfo":currentlySelected==2}' ng-click="$scope.currentlySelected=2; orderByMe('woonplaats', 2)">Woonplaats</th>
+        <th>Telefoonnummer</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="x in names | orderBy:myOrderBy" ng-mouseenter="updateTimestamp(x.tijdtoegevoegd)">
+        <td>{{ x.voornaam }}</td>
+        <td>{{ x.achternaam }}</td>
+        <td>{{ x.straat }}</td>
+        <td>{{ x.huisnummer }}</td>
+        <td>{{ x.postcode }}</td>
+        <td>{{ x.woonplaats }}</td>
+        <td>{{ x.telefoonnummer }}</td>
+        <td><a ng-click="setCurrentRow(x.id, $index)" href="#!edit">Aanpassen</a></td>
+        <td><a ng-click="setCurrentRow(x.id, $index)" href="#!delete">Verwijderen</a></td>
+    </tr>
+</table>

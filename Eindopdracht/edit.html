@@ -1,0 +1,22 @@
+<h3>Aanpassen</h3>
+<div class="container center">
+    <div ng-if="currentRowId">
+        <form ng-submit="editRow()">
+            <label>Voornaam: <input type="text" ng-model="names[currentRowIndex].voornaam"/></label><br/>
+            <label>Achternaam: <input type="text" ng-model="names[currentRowIndex].achternaam"/></label><br/>
+            <label>Straat: <input type="text" ng-model="names[currentRowIndex].straat"/></label><br/>
+            <label>Huisnummer: <input type="text" ng-model="names[currentRowIndex].huisnummer"/></label><br/>
+            <label>Postcode: <input type="text" ng-model="names[currentRowIndex].postcode"/></label><br/>
+            <label>Woonplaats: <input type="text" ng-model="names[currentRowIndex].woonplaats"/></label><br/>
+            <label>Telefoonnummer: <input type="text" ng-model="names[currentRowIndex].telefoonnummer"/></label><br/><br>
+
+            <input value="Aanpassen" type="submit">
+            <input value="Terug" type="button" ng-click="routePage('/')">
+        </form>
+    </div>
+    <div ng-if="!currentRowId">
+        Er is geen persoon geselecteerd.
+        <br><br><input value="Terug" type="button" ng-click="routePage('/')">
+    </div>
+</div>
+

@@ -1,0 +1,10 @@
+<h3>Overzicht</h3>
+<div class="center">
+    Timestamp van huidige rij: <span>{{timestamp ? timestamp : "0000-00-00 00:00:00" }}</span>
+</div><br>
+<div overview-table></div>
+<br><br>
+<div class="center">
+    <input ng-disabled="currentlySelected==0" class="center" ng-click="clearSort()" type="button" value="Sorteren uitschakelen">
+    <input class="center" ng-click="routePage('/create')" type="button" value="Toevoegen">
+</div>
